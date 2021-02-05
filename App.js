@@ -1,21 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React from "react";
+import {
+  StyleSheet,
+  TouchableWithoutFeedback, //returns nothing when touched
+  Keyboard, //Keyboard api
+  View,
+} from "react-native";
+import Header from "./components/Header";
+import StartGameScreen from "./screens/StartGameScreen";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      {/* close keyboard when touched outside */}
+      <View style={styles.container}>
+        <Header title="Guess a Number" />
+        <StartGameScreen />
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
