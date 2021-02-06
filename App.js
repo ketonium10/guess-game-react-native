@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   TouchableWithoutFeedback, //returns nothing when touched
@@ -6,14 +6,27 @@ import {
   View,
 } from "react-native";
 import Header from "./components/Header";
+import GameScreen from "./screens/GameScreen";
 import StartGameScreen from "./screens/StartGameScreen";
+
 export default function App() {
+  const [number, setNumber] = useState();
+
+  const startGameHandler = (userNumber) => {
+    setNumber(userNumber);
+  };
+  let content = <StartGameScreen startGame={startGameHandler} />;
+
+  if (number) {
+    content = <GameScreen userNumber={number} />;
+  }
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       {/* close keyboard when touched outside */}
       <View style={styles.container}>
         <Header title="Guess a Number" />
-        <StartGameScreen />
+        {content}
       </View>
     </TouchableWithoutFeedback>
   );

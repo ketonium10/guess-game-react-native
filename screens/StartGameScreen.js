@@ -8,9 +8,8 @@ import Input from "../components/Input";
 import Color from "../constants/color";
 import ConfirmInputScreen from "./ConfirmInputScreen";
 
-const StartGameScreen = () => {
+const StartGameScreen = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
-  const [confirmed, setConfirmed] = useState(false);
   const [confirmedNumber, setConfirmedNumber] = useState(0);
   const [showModal, setShowModal] = useState(false);
   //validation to not allow users to enter any character except 0-9
@@ -21,7 +20,6 @@ const StartGameScreen = () => {
   //reset input
   const resetInputHandler = () => {
     setEnteredValue("");
-    setConfirmed(false);
     setShowModal(false);
   };
 
@@ -40,26 +38,20 @@ const StartGameScreen = () => {
       ]);
       return;
     }
-    setConfirmed(true);
     setConfirmedNumber(number);
     setEnteredValue("");
     setShowModal(true);
     Keyboard.dismiss();
   };
 
-  let confirmedInput;
-  if (confirmed) {
-    confirmedInput = (
+  return (
+    <View style={styles.container}>
       <ConfirmInputScreen
         show={showModal}
         number={confirmedNumber}
         reset={resetInputHandler}
+        startGame={props.startGame}
       />
-    );
-  }
-
-  return (
-    <View style={styles.container}>
       <Text style={styles.title}>Start a New Game!</Text>
       <Card styles={styles.inputContainer}>
         <Text>Enter a number</Text>
@@ -87,7 +79,7 @@ const StartGameScreen = () => {
           </View>
         </ButtonsContainer>
       </Card>
-      {confirmedInput}
+      {/* {confirmedInput} */}
     </View>
   );
 };
