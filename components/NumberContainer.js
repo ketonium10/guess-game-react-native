@@ -1,4 +1,6 @@
 import React from "react";
+/** COMPONENT TO WRAP THE NUMBER */
+
 import { Text, View, StyleSheet } from "react-native";
 import Colors from "../constants/color";
 

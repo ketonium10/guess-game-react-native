@@ -1,3 +1,5 @@
+/** COMPONENT TO GIVE THE CHILDREN PROPS A CARD LOOK */
+
 import React from "react";
 import { View, StyleSheet } from "react-native";
 

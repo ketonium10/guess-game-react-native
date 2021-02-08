@@ -1,13 +1,14 @@
 {
   "expo": {
-    "name": "guess-game",
+    "name": "Guess My Number",
+    "description":"This application finds out the number you have entered using binary search algorithm",
     "slug": "guess-game",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/adaptive-icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -20,13 +21,12 @@
       "supportsTablet": true
     },
     "android": {
+      "package":"com.ketonium10.guess_my_number",
+      "versionCode":1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
   }
 }

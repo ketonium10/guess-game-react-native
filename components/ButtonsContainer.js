@@ -1,5 +1,6 @@
+/** COMPONENT TO WRAP THE BUTTONS AND ALIGN THEM HORIZONTALY */
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 const ButtonsContainer = (props) => (
   <View style={styles.buttonsContainer}>{props.children}</View>

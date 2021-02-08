@@ -1,7 +1,9 @@
-/**Start Game Screen shown at start of app */
+/** FIRST SCREEN OF THE GAME  */
 
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Button, Alert, Keyboard } from "react-native";
+import { View, StyleSheet, Button, Alert, Keyboard } from "react-native";
+import BodyText from "../components/BodyText";
+import TitleText from "../components/TitleText";
 import ButtonsContainer from "../components/ButtonsContainer";
 import Card from "../components/Card";
 import Input from "../components/Input";
@@ -52,9 +54,9 @@ const StartGameScreen = (props) => {
         reset={resetInputHandler}
         startGame={props.startGame}
       />
-      <Text style={styles.title}>Start a New Game!</Text>
+      <TitleText style={styles.title}>Start a New Game!</TitleText>
       <Card styles={styles.inputContainer}>
-        <Text>Enter a number</Text>
+        <BodyText>Enter a number</BodyText>
         <Input
           styles={styles.input}
           keyboardType="number-pad"

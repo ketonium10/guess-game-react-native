@@ -1,14 +1,18 @@
+/** A MODAL SCREEN SHOWING THE USER -  THE NUMBER THEY HAVE ENTERED AND WAITING FOR CONFIRMATION*/
+
 import React from "react";
-import { Text, Modal, StyleSheet, Button, View } from "react-native";
+import { Modal, StyleSheet, Button, View } from "react-native";
 import Card from "../components/Card";
 import NumberContainer from "../components/NumberContainer";
 import ButtonsContainer from "../components/ButtonsContainer";
 import Color from "../constants/color";
+import BodyText from "../components/BodyText";
+
 const ConfirmInputScreen = (props) => (
   <Modal visible={props.show}>
     <View style={styles.container}>
       <Card styles={styles.summaryContainer}>
-        <Text>You entered</Text>
+        <BodyText>You entered</BodyText>
         <NumberContainer>{props.number}</NumberContainer>
         <ButtonsContainer>
           <View style={styles.buttons}>
@@ -30,6 +34,7 @@ const ConfirmInputScreen = (props) => (
     </View>
   </Modal>
 );
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

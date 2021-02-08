@@ -1,10 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+/** HEADER OF THE GAME */
+
+import { View, StyleSheet } from "react-native";
 import Color from "../constants/color";
+import TitleText from "../components/TitleText";
 const Header = (props) => {
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.headerText}>{props.title}</Text>
+      <TitleText style={styles.headerText}>{props.title}</TitleText>
     </View>
   );
 };

@@ -33,3 +33,25 @@ const Input = (props) => (
 
 
 ```
+
+## LOADING FONTS
+
+- expo install expo-font
+- import { useFonts } from "expo-font";
+
+```
+ const [loaded] = useFonts({
+  "OpenSans-Regular": require("./assets/Fonts/OpenSans-Regular.ttf"),
+  "OpenSans-Bold": require("./assets/Fonts/OpenSans-Bold.ttf"),
+  });
+
+   headerText: {
+    color: "black",
+    fontSize: 28,
+    fontFamily: "OpenSans-Bold",
+  },
+```
+
+## APP LOADING
+
+- This is used to load async data before the app loads
