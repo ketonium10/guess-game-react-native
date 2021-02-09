@@ -22,8 +22,6 @@ const GameScreen = (props) => {
   //using useEffect to trigger game over function whenever the value of currentGuess/userNumber/gameOver function changes
   useEffect(() => {
     if (numberGuess === props.userNumber) {
-      console.log(rounds);
-
       props.onGameOver(rounds.length);
     }
   }, [numberGuess, props.userNumber, props.GameOver]);
