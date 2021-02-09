@@ -1,7 +1,7 @@
 /** MAIN SCREEN SHOWING THE GENERATED NUMBER AND LOWER AND GREATER BUTTONS */
 
 import React, { useState, useRef, useEffect } from "react";
-import { ScrollView, View, StyleSheet, Alert } from "react-native";
+import { ScrollView, View, StyleSheet, Alert, Dimensions } from "react-native";
 import Card from "../components/Card";
 import NumberContainer from "../components/NumberContainer";
 import generateNumber from "../constants/RandomNumberGenerator";
@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginTop: 20,
-    width: 300,
-    maxWidth: "80%",
+    width: "80%",
+    minWidth: Dimensions.get("window").width * 0.9,
   },
   listContainer: {
     width: "80%",

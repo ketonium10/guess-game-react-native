@@ -55,3 +55,7 @@ const Input = (props) => (
 ## APP LOADING
 
 - This is used to load async data before the app loads
+
+## SETTING UP DIMENSIONS
+
+- import {Dimensions} from "react-native"

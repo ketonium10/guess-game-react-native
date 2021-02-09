@@ -1,5 +1,11 @@
 import React from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
 import Colors from "../constants/color";
 
 const CustomMainButton = (props) => (
@@ -12,9 +18,9 @@ const CustomMainButton = (props) => (
 const styles = StyleSheet.create({
   button: {
     backgroundColor: Colors.primary,
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
+    paddingVertical: Dimensions.get("window").width > 350 ? 12 : 6,
+    paddingHorizontal: Dimensions.get("window").width > 350 ? 30 : 20,
+    borderRadius: Dimensions.get("window").width > 350 ? 25 : 18,
   },
   buttonText: {
     color: "white",

@@ -1,7 +1,14 @@
 /** FIRST SCREEN OF THE GAME  */
 
 import React, { useState } from "react";
-import { View, StyleSheet, Button, Alert, Keyboard } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Button,
+  Alert,
+  Keyboard,
+  Dimensions,
+} from "react-native";
 import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
 import ButtonsContainer from "../components/ButtonsContainer";
@@ -104,8 +111,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   inputContainer: {
-    width: 300,
-    maxWidth: "80%",
+    width: "80%",
+    minWidth: Dimensions.get("window").width * 0.9,
     alignItems: "center",
   },
   buttons: {

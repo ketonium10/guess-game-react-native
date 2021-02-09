@@ -1,7 +1,7 @@
 /** LAST SCREEN OF THE GAME  */
 
 import React from "react";
-import { Text, View, StyleSheet, Button, Image } from "react-native";
+import { Text, View, StyleSheet, Dimensions, Image } from "react-native";
 import Colors from "../constants/color";
 import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: {
-    width: 300,
-    height: 300,
-    borderRadius: 150,
+    width: Dimensions.get("window").width * 0.7,
+    height: Dimensions.get("window").height * 0.4,
+    borderRadius: Dimensions.get("window").width * 0.6,
     borderWidth: 3,
     overflow: "hidden",
-    marginVertical: 30,
+    marginVertical: Dimensions.get("window").height > 600 ? 20 : 5,
     borderColor: "black",
   },
   image: {
