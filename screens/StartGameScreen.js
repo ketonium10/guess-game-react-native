@@ -8,6 +8,8 @@ import {
   Alert,
   Keyboard,
   Dimensions,
+  ScrollView,
+  KeyboardAvoidingView,
 } from "react-native";
 import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
@@ -54,42 +56,45 @@ const StartGameScreen = (props) => {
   };
 
   return (
-    <View style={styles.container}>
-      <ConfirmInputScreen
-        show={showModal}
-        number={confirmedNumber}
-        reset={resetInputHandler}
-        startGame={props.startGame}
-      />
-      <TitleText style={styles.title}>Start a New Game!</TitleText>
-      <Card styles={styles.inputContainer}>
-        <BodyText>Enter a number</BodyText>
-        <Input
-          styles={styles.input}
-          keyboardType="number-pad"
-          maxLength={2}
-          value={enteredValue}
-          onChangeText={numberInputHandler}
-        />
-        <ButtonsContainer>
-          <View style={styles.buttons}>
-            <Button
-              title="Confirm"
-              color={Color.primary}
-              onPress={confirmInputHandler}
+    <ScrollView>
+      <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={20}>
+        <View style={styles.container}>
+          <ConfirmInputScreen
+            show={showModal}
+            number={confirmedNumber}
+            reset={resetInputHandler}
+            startGame={props.startGame}
+          />
+          <TitleText style={styles.title}>Start a New Game!</TitleText>
+          <Card styles={styles.inputContainer}>
+            <BodyText>Enter a number</BodyText>
+            <Input
+              styles={styles.input}
+              keyboardType="number-pad"
+              maxLength={2}
+              value={enteredValue}
+              onChangeText={numberInputHandler}
             />
-          </View>
-          <View style={styles.buttons}>
-            <Button
-              title="Reset"
-              color={Color.accent}
-              onPress={resetInputHandler}
-            />
-          </View>
-        </ButtonsContainer>
-      </Card>
-      {/* {confirmedInput} */}
-    </View>
+            <ButtonsContainer>
+              <View style={styles.buttons}>
+                <Button
+                  title="Confirm"
+                  color={Color.primary}
+                  onPress={confirmInputHandler}
+                />
+              </View>
+              <View style={styles.buttons}>
+                <Button
+                  title="Reset"
+                  color={Color.accent}
+                  onPress={resetInputHandler}
+                />
+              </View>
+            </ButtonsContainer>
+          </Card>
+        </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 

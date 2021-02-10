@@ -4,7 +4,7 @@
     "description":"This application finds out the number you have entered using binary search algorithm",
     "slug": "guess-game",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/adaptive-icon.png",
     "splash": {
       "image": "./assets/splash.png",
