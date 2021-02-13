@@ -29,7 +29,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: {
-    width: Dimensions.get("window").width * 0.7,
+    width:
+      Dimensions.get("window").width > 500
+        ? Dimensions.get("window").width * 0.4
+        : Dimensions.get("window").width * 0.7,
     height: Dimensions.get("window").height * 0.4,
     borderRadius: Dimensions.get("window").width * 0.6,
     borderWidth: 3,

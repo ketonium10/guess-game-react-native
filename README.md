@@ -1,61 +1,15 @@
-# GUESS NUMBER GAME
+# Guess my number game with Expo
 
-- Making dynamic styling/Adding custom styling
+[![made with expo](https://img.shields.io/badge/MADE%20WITH%20EXPO-000.svg?style=for-the-badge&logo=expo&labelColor=4630eb&logoWidth=20)](https://github.com/expo/expo) [![supports iOS and Android](https://img.shields.io/badge/Platforms-Native-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff)](https://github.com/expo/expo)
 
-  Below we are spreading the styles of Card component and then we can edit these edits by passing some styles as params, which will be added through spread operator
+<p align="center">
+  <img src="screenshots/ss.png?raw=true" />
+</p>
 
-```
-    const Card = (props) => (
-    <View styles={{ ...styles.card, ...props.styles }}>{props.children}</View>
-    );
+## Install & Build
 
-    const styles = StyleSheet.create({
-    card: {
-        shadowColor: "black",
-        shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 6,
-        shadowRadius: 0.26,
-        elevation: 6,
-        backgroundColor: "white",
-        padding: 20,
-        borderRadius: 10,
-    },
-    });
+First, make sure you have Expo CLI installed: `npm install -g expo-cli`
 
-```
+Install: `npm` or `npm install`
 
-- Taking all the props and spreading it
-
-```
-const Input = (props) => (
-  <TextInput {...props} style={{ ...styles.input, ...props.styles }} />
-);
-
-
-```
-
-## LOADING FONTS
-
-- expo install expo-font
-- import { useFonts } from "expo-font";
-
-```
- const [loaded] = useFonts({
-  "OpenSans-Regular": require("./assets/Fonts/OpenSans-Regular.ttf"),
-  "OpenSans-Bold": require("./assets/Fonts/OpenSans-Bold.ttf"),
-  });
-
-   headerText: {
-    color: "black",
-    fontSize: 28,
-    fontFamily: "OpenSans-Bold",
-  },
-```
-
-## APP LOADING
-
-- This is used to load async data before the app loads
-
-## SETTING UP DIMENSIONS
-
-- import {Dimensions} from "react-native"
+Run Project Locally: `npm start`
